@@ -14,7 +14,7 @@ Adding more stuff and things to Unity's base UI. Working on custom events system
 * Get correct functions from custom property drawer to invokable Unity Event for Tracked Unity Event
 
 ## License
-This project is licensed under the [MIT] License - see the [LICENSE.md](https://github.com/ZeppelinGames/Unity-UI-Extensions/blob/main/LICENSE) file for details
+This project is licensed under the [MIT] License - see the [LICENSE](https://github.com/ZeppelinGames/Unity-UI-Extensions/blob/master/LICENSE) file for details
 
 ## Check out my other shit
 <a href="http://www.twitter.com/Zeppelin_Games"><img src="https://image.flaticon.com/icons/png/512/124/124021.png" width="48"></a>
