@@ -30,4 +30,4 @@ This project is licensed under the [MIT] License - see the [LICENSE.md](https://
 [issues-shield]: https://img.shields.io/github/issues/ZeppelinGames/Unity-UI-Extensions.svg?style=for-the-badge
 [issues-url]: https://github.com/ZeppelinGames/Unity-UI-Extensions/issues
 [license-shield]: https://img.shields.io/github/license/ZeppelinGames/Unity-UI-Extensions.svg?style=for-the-badge
-[license-url]: https://github.com/ZeppelinGames/Unity-UI-Extensions/blob/master/LICENSE.txt
+[license-url]: https://github.com/ZeppelinGames/Unity-UI-Extensions/blob/master/LICENSE
