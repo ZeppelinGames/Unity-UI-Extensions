@@ -60,9 +60,12 @@ public class ExtendedButton : Button, IPointerDownHandler, IPointerClickHandler,
         }
     }
 
-    public void TestFunction() {
-        Debug.Log("Yey");
-    }
+    public void TestVoid() { }
+    public void TestStringParam(string s) { }
+    public void TestIntParam(int i) { }
+    public void TestFloatParam(float f) { }
+    public void TestBoolParam(bool b) { }
+    public void TestStringIntParam(string s, int i) { }
 }
 
 [System.Serializable]
@@ -76,9 +79,10 @@ public class ExtendedButtonEvent {
     }
 
     public void RunEvent() {
-        if (buttonEvent.trackedEvent != null) {
-            buttonEvent.trackedEvent.Invoke();
-
+        if (buttonEvent != null) {
+            buttonEvent.InvokeEvents();
+        } else {
+            Debug.LogError("Button event doesnt exist");
         }
     }
 }

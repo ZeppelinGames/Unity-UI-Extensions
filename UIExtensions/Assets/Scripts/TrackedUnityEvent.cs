@@ -5,26 +5,34 @@ using UnityEngine.Events;
 
 [System.Serializable]
 public class TrackedUnityEvent : MonoBehaviour {
-    public UnityEvent trackedEvent;
-    private int listenersCount;
+    [SerializeField] private int listenersCount;
 
-    private List<UnityAction> actions = new List<UnityAction>();
+    [SerializeField] private List<UnityAction> actions = new List<UnityAction>();
+    public Object actionObject = null;
+
+    public TrackedUnityEvent() {
+        actionObject = null;
+    }
 
     public int getListenersCount() {
         return this.listenersCount;
     }
 
     public void AddListener(UnityAction call) {
-        Debug.Log("Added");
         actions.Add(call);
-        trackedEvent.AddListener(call);
+       // actionObjects.Add((Object)call.Target);
+
         listenersCount++;
     }
 
     public void RemoveListener(UnityAction call) {
-        Debug.Log("removed");
         actions.Remove(call);
-        trackedEvent.RemoveListener(call);
+       // actionObjects.Remove((Object)call.Target);
+
         listenersCount--;
+    }
+
+    public void InvokeEvents() {
+        for (int i = 0; i < actions.Count; i++) { actions[i].Invoke(); }
     }
 }

@@ -47,11 +47,14 @@ public static class HelperExtensions {
             new Vector2(r.position.x + pad.width, r.position.y + pad.x - pad.y),
             new Vector2(r.width - pad.width - pad.height, r.height - pad.x - pad.y));
     }
+    public static Rect PadRect(this Rect rect, int t, int b ,int l, int r) { //tblr
+        return new Rect(
+            new Vector2(rect.position.x + l, rect.position.y + t - b),
+            new Vector2(rect.width - l - r, rect.height - t - b));
+    }
     #endregion
 
-    public static MethodInfo[] GetScriptFunctions(this MonoBehaviour target, BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Default) {
-        List<MethodInfo> methods = new List<MethodInfo>();
-        methods.AddRange(target.GetType().GetMethods(flags));
-        return methods.ToArray();
+    public static MethodInfo[] GetScriptFunctions(this MonoBehaviour target, BindingFlags flags = BindingFlags.Instance | BindingFlags.Public) {
+        return target.GetType().GetMethods(flags);
     }
 }
