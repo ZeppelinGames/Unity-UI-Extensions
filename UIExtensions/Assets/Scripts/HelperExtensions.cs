@@ -51,10 +51,7 @@ public static class HelperExtensions {
 
     public static MethodInfo[] GetScriptFunctions(this MonoBehaviour target, BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Default) {
         List<MethodInfo> methods = new List<MethodInfo>();
-        MonoBehaviour[] mbs = target.GetComponents<MonoBehaviour>();
-
-        foreach (MonoBehaviour mb in mbs) { methods.AddRange(mb.GetType().GetMethods(flags)); }
-
+        methods.AddRange(target.GetType().GetMethods(flags));
         return methods.ToArray();
     }
 }
