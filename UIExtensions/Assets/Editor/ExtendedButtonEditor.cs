@@ -28,8 +28,15 @@ public class ExtendedButtonEditor : Editor {
         reorderableButtonEvents = new ReorderableList(serializedObject, extendedButtonEventsProp, true, true, true, true) {
             drawHeaderCallback = DrawEventListHeader,
             drawElementCallback = DrawEventListItems,
-            elementHeightCallback = SetElementHeight
+            elementHeightCallback = SetElementHeight,
+            onAddCallback = AddedItem
         };
+    }
+
+    private void AddedItem(ReorderableList list) {
+        //TrackedUnityEvent newEvent = new TrackedUnityEvent();
+        button.extendedButtonEvents.Add(new ExtendedButtonEvent(ExtendedButtonEventTypes.OnClick, new TrackedUnityEvent()));
+        Debug.Log("added");
     }
 
     void OnDisable() {

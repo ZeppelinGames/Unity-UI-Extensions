@@ -365,7 +365,16 @@ MonoBehaviour:
       m_Calls: []
   extendedButtonEvents:
   - eventType: 0
-    buttonEvent: {fileID: 0}
+    buttonEvent:
+      listenersCount: 1
+      actionObjects:
+      - id: 0
+      selectedCompIndex: 00000000
+      selectedFuncIndex: 00000000
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!114 &1137028524
 MonoBehaviour:
   m_ObjectHideFlags: 0
